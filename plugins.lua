@@ -6,7 +6,7 @@
 -- end
 
 local plugins = { 
-    { "mg979/vim-visual-multi", ft = {"lua","js","text","html","txt","sql","php","xml","wsdl"} },
+    { "mg979/vim-visual-multi", ft = {"lua","text","html","txt","sql","php","jsx","ts","xml","wsdl","javascript"} },
     {
         "toggleterm.nvim",
         shell = "C:/Users/odrom/AppData/Local/Microsoft/WindowsApps/Microsoft.PowerShell_8wekyb3d8bbwe/pwsh.exe"
