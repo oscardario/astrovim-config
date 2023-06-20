@@ -8,7 +8,7 @@
 local plugins = {
   {
     "mg979/vim-visual-multi",
-    ft = { "lua", "text", "html", "txt", "sql", "php", "jsx", "ts", "xml", "wsdl",
+    ft = { "lua", "text", "html", "txt", "sql", "php", "jsx", "ts", "xml", "wsdl", "typescript",
       "javascript" }
   },
   {
@@ -165,5 +165,38 @@ local plugins = {
       }
     end,
   },
+  {
+  "nvim-treesitter/nvim-treesitter",
+  dependencies = { "windwp/nvim-ts-autotag", "JoosepAlviste/nvim-ts-context-commentstring" },
+  event = "User AstroFile",
+  cmd = {
+    "TSBufDisable",
+    "TSBufEnable",
+    "TSBufToggle",
+    "TSDisable",
+    "TSEnable",
+    "TSToggle",
+    "TSInstall",
+    "TSInstallInfo",
+    "TSInstallSync",
+    "TSModuleInfo",
+    "TSUninstall",
+    "TSUpdate",
+    "TSUpdateSync",
+  },
+  build = ":TSUpdate",
+  opts = {
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query","typescript", "javascript", "php", "sql", "json", "html", "css", "yaml", "dockerfile" },
+    highlight = {
+      enable = true,
+      disable = function(_, bufnr) return vim.api.nvim_buf_line_count(bufnr) > 10000 end,
+    },
+    incremental_selection = { enable = true },
+    indent = { enable = true },
+    autotag = { enable = true },
+    context_commentstring = { enable = true, enable_autocmd = false },
+  },
+  config = require "plugins.configs.nvim-treesitter",
+}
 }
 return plugins

@@ -6,4 +6,6 @@
 -- vim.opt.shellquote = ""
 -- vim.opt.shellxquote = ""
 
+-- Specify the :TSInstall packages that you want to install
+
 return { "mg979/vim-visual-multi" }

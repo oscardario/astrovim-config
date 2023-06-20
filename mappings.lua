@@ -7,12 +7,16 @@ local mappings = {
       desc = "Format buffer",
     },
     ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+    ["<C-S-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
+    ["<C-S-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
   },
   t = {
     -- setting a mapping to false will disable it
     ["<esc>"] = false,
   },
 }
+
+
 -- Go to the end of the start and end
 vim.api.nvim_set_keymap('n', '0', '<End>', { noremap = true })
 -- Go to the begin of and end
